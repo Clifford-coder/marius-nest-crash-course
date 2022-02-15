@@ -15,9 +15,15 @@ export class UsersService {
       name: 'Michael Owusu',
       age: 4,
     },
+    {
+      id: '3',
+      name: 'Bernice Owusu',
+      age: 6,
+    },
   ];
 
-  findAllUser(): User[] {
+  findAllUser(name?: string): User[] {
+    if (name) return this.users.filter((user) => user.name === name);
     return this.users;
   }
 
